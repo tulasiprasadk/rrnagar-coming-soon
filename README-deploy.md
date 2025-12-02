@@ -91,3 +91,7 @@ If you're deploying a Node.js server instead of static files:
       --host ${{ secrets.DEPLOY_HOST }} \
       --remote-path /var/www/mysite
 ```
+
+## Security Notes
+
+This script is designed for use by trusted operators. The `--build` and `--migrate` options execute shell commands directly, which allows flexible build pipelines but means you should never pass untrusted input to these options.

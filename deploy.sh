@@ -38,22 +38,42 @@ EOF
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --host)
+      if [[ $# -lt 2 || "$2" == --* ]]; then
+        echo "Error: --host requires an argument"
+        exit 1
+      fi
       SSH_HOST="$2"
       shift 2
       ;;
     --remote-path)
+      if [[ $# -lt 2 || "$2" == --* ]]; then
+        echo "Error: --remote-path requires an argument"
+        exit 1
+      fi
       REMOTE_PATH="$2"
       shift 2
       ;;
     --build)
+      if [[ $# -lt 2 || "$2" == --* ]]; then
+        echo "Error: --build requires an argument"
+        exit 1
+      fi
       BUILD_CMD="$2"
       shift 2
       ;;
     --build-dir)
+      if [[ $# -lt 2 || "$2" == --* ]]; then
+        echo "Error: --build-dir requires an argument"
+        exit 1
+      fi
       BUILD_DIR="$2"
       shift 2
       ;;
     --migrate)
+      if [[ $# -lt 2 || "$2" == --* ]]; then
+        echo "Error: --migrate requires an argument"
+        exit 1
+      fi
       MIGRATE_CMD="$2"
       shift 2
       ;;
@@ -104,7 +124,9 @@ BACKUP_FILE="backup_$TIMESTAMP.tar.gz"
 
 echo "==> Creating remote backup at $BACKUP_DIR/$BACKUP_FILE"
 if [[ "$DRY_RUN" == "false" ]]; then
-  ssh "$SSH_HOST" "mkdir -p '$BACKUP_DIR' && cd '$REMOTE_PATH' && tar --exclude='./backups' -czf '$BACKUP_DIR/$BACKUP_FILE' . 2>/dev/null || true"
+  if ! ssh "$SSH_HOST" "mkdir -p '$BACKUP_DIR' && cd '$REMOTE_PATH' && tar --exclude='./backups' -czf '$BACKUP_DIR/$BACKUP_FILE' . 2>/dev/null"; then
+    echo "Warning: Backup creation may have failed or directory is empty (continuing with deploy)"
+  fi
 else
   echo "[DRY-RUN] Would create backup at $BACKUP_DIR/$BACKUP_FILE"
 fi
