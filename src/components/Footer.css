@@ -1,0 +1,149 @@
+/* MAIN FOOTER */
+.rn-footer {
+  background: #f4f4f4;
+  padding: 25px 0 10px 0;
+  border-top: 2px solid #ddd;
+  width: 100%;
+}
+
+/* MAIN LAYOUT: LEFT & RIGHT */
+.rn-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: space-between; /* extreme left & right */
+  align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.footer-left-row {
+  display: flex;
+  gap: 30px;
+  font-size: 15px;
+  color: #333;
+}
+
+/* RIGHT SIDE */
+.footer-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-right-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+/* SOCIAL BUTTONS */
+.social-pill {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Facebook Blue */
+.social-pill.fb {
+  background: #1877F2;
+}
+
+/* Twitter/X Black */
+.social-pill.tw {
+  background: #000000;
+  color: white;
+}
+
+/* Instagram Gradient */
+.social-pill.ig {
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+}
+
+/* .heart-red {
+  color: #c8102e !important;
+  font-size: 30px;     /* increased size */
+  font-weight: bold;
+  line-height: 0;
+}
+
+
+/* BOTTOM FOOTER */
+.rn-footer-bottom {
+  background: #eaeaea;
+  padding: 12px 0;
+  border-top: 1px solid #ccc;
+  width: 100%;
+}
+
+.rn-footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Bottom Links */
+.bottom-links a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #c8102e;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .rn-footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-left-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-right-row {
+    justify-content: center;
+  }
+
+  .rn-footer-bottom-inner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+

@@ -1,0 +1,36 @@
+/* ============ GLOBAL RESET ============ */
+:root, html, body, #root {
+  background-color: #e9e9e9 !important;   /* ⭐ very light black / light grey */
+  color: #111 !important;                 /* readable text */
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============ LINKS ============ */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+/* ============ BODY ============ */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: block;                    /* Stop flex centering to avoid layout issues */
+  background-color: #e9e9e9 !important;  /* force background */
+}
+
+/* ============ HEADINGS ============ */
+h1 {
+  font-size: 3.2em;

@@ -1,0 +1,243 @@
+/* GLOBAL */
+.home-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  margin: 10px auto;
+  padding: 35px;
+  border-radius: 18px;
+  background: linear-gradient(to right, #fff8df, #f3f7fa);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: relative;
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* ================= POPULAR CATEGORIES ================= */
+.popular-cat {
+  margin: 40px 0;
+}
+
+.popular-cat h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 18px;
+  justify-content: center;
+}
+
+.cat-item {
+  background: #ffd700;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #a80000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cat-item:hover {
+  transform: translateY(-5px);
+}
+
+.cat-icon {
+  font-size: 28px;
+  display: block;
+}
+
+/* ================= ADS SECTION ================= */
+.ads-section {
+  margin: 40px 0;
+  overflow: hidden;
+  padding: 20px 0;
+  position: relative;
+}
+
+.ads-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  /* Animation for infinite scroll */
+  animation: adsScroll 20s linear infinite;
+  width: max-content;
+  /* Ensure it's wide enough to scroll */
+}
+
+/* Pause on hover */
+.ads-section:hover .ads-container {
+  animation-play-state: paused;
+}
+
+@keyframes adsScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ad-card {
+  min-width: 150px;
+  padding: 12px 15px;
+  background: white;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.ad-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* ================= EXPLORE ================= */
+.explore-section {
+  margin-top: 40px;
+}
+
+.explore-section h2 {
+  font-size: 28px;
+  border-radius: 14px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.explore-card:hover {
+  transform: translateY(-5px);
+}
+
+.explore-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+}
+
+.explore-icon {
+  font-size: 34px;
+}
+
+.explore-card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+.explore-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* POPUP */
+.explore-popup {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  width: 240px;
+  background: #111;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: 0.2s ease;
+  z-index: 10;
+}
+
+/* Arrow for popup */
+.explore-popup::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #111 transparent transparent transparent;
+}
+
+.explore-popup.open {
+  opacity: 1;
+  visibility: visible;
+  bottom: calc(100% + 15px);
+}
+
+.popup-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.popup-body {
+  font-size: 14px;
+  line-height: 1.4;
+}
